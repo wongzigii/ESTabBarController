@@ -105,7 +105,7 @@ open class ESTabBarItemContentView: UIView {
     }
     
     /// Icon imageView renderingMode, default is .alwaysTemplate like UITabBarItem
-    open var renderingMode: UIImageRenderingMode = .alwaysTemplate {
+    open var renderingMode: UIImage.RenderingMode = .alwaysTemplate {
         didSet {
             self.updateDisplay()
         }
@@ -210,7 +210,7 @@ open class ESTabBarItemContentView: UIView {
     open func updateLayout() {
         let w = self.bounds.size.width
         let h = self.bounds.size.height
-        let isLandscape = UIDeviceOrientationIsLandscape(UIDevice.current.orientation) // is landscape
+        let isLandscape = UIDevice().orientation.isLandscape
         var s: CGFloat = 0.0 // image size
         var f: CGFloat = 0.0 // font
         
